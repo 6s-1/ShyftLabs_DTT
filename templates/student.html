@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShyftLabs - Development Technical Test</title>
+    <link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Students">Students</a></li>
+            <!-- Add links to Courses and Results if you implement optional requirements -->
+            <!-- <li><a href="/Courses">Courses</a></li> -->
+            <!-- <li><a href="/Results">Results</a></li> -->
+        </ul>
+    </nav>
+    <h1>ShyftLabs - Development Technical Test</h1>
+    <div>
+        <h2>Add New Student</h2>
+        <form action="/Students" method="POST">
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" id="firstName" required>
+            <br>
+            <label for="familyName">Family Name:</label>
+            <input type="text" name="familyName" id="familyName" required>
+            <br>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" name="dob" id="dob" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <!-- Tabular list of students -->
+    <div>
+        <h2>List of Students</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Family Name</th>
+                    <th>Date of Birth</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Populate this table dynamically with student data -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Notification area -->
+    <div id="notification"></div>
+    <!-- JavaScript to handle form submission and display notifications -->
+    <script>
+        document.querySelector('form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch(this.action, {
+                method: this.method,
+                body: formData
+            });
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success) {
+                    // Show success notification
+                    document.getElementById('notification').textContent = 'New student added successfully.';
+                    // Clear form inputs
+                    this.reset();
+                    // Append new row to the table
+                    const tableBody = document.querySelector('tbody');
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `<td>${formData.get('firstName')}</td><td>${formData.get('familyName')}</td><td>${formData.get('dob')}</td>`;
+                    tableBody.appendChild(newRow);
+                } else {
+                    // Show error notification
+                    document.getElementById('notification').textContent = data.error;
+                }
+            } else {
+                // Show error notification
+                document.getElementById('notification').textContent = 'Failed to add new student.';
+            }
+        });
+    </script>
+</body>
+</html>

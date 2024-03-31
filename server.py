@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 # Define a list to store student data
 student = []
+courses = []
 
 # Homepage route
 @app.route('/')
@@ -37,6 +38,16 @@ def student_page():
         return jsonify({'success': True}), 200
 
     return render_template('student.html', student=student)
+
+@app.route('/courses', methods=['GET', 'POST'])
+def courses_page():
+    if request.method == 'POST':
+        course_name = request.form.get('CourseName')
+        if not course_name:
+           return jsonify({'error': 'All fields are required.'}), 400
+        courses.append({'course_name': course_name})
+
+    return render_template('courses.html', courses=courses)
 
 # if __name__ == "__main__":
 #     serve(app, host="0.0.0.0", port=8000)

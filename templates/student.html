@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+        
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShyftLabs - Development Technical Test</title>
     <link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet">
 </head>
+<style>
+    body {
+    padding: 2rem;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2rem;}
+    table, th, td {
+        border: 1px solid #000000;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 8px;
+    }
+    </style>
+    
+
 <body>
+    <h1>ShyftLabs - Development Technical Test</h1>
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/Students">Students</a></li>
+            <li><a href="/courses">Courses</a></li>
             <!-- Add links to Courses and Results if you implement optional requirements -->
             <!-- <li><a href="/Courses">Courses</a></li> -->
             <!-- <li><a href="/Results">Results</a></li> -->
         </ul>
     </nav>
-    <h1>ShyftLabs - Development Technical Test</h1>
+
     <div>
         <h2>Add New Student</h2>
-        <form action="/Students" method="POST">
+        <form action="/student" method="POST">
             <label for="firstName">First Name:</label>
             <input type="text" name="firstName" id="firstName" required>
             <br>
@@ -44,42 +68,44 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Populate this table dynamically with student data -->
+                {% for student in student %}
+                <tr>
+                    <td>{{ student['first_name'] }}</td>
+                    <td>{{ student['family_name'] }}</td>
+                    <td>{{ student['dob'] }}</td>
+                </tr>
+                {% endfor %}
             </tbody>
         </table>
+        
     </div>
     <!-- Notification area -->
     <div id="notification"></div>
     <!-- JavaScript to handle form submission and display notifications -->
     <script>
         document.querySelector('form').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-            const response = await fetch(this.action, {
-                method: this.method,
-                body: formData
-            });
-            if (response.ok) {
-                const data = await response.json();
-                if (data.success) {
-                    // Show success notification
-                    document.getElementById('notification').textContent = 'New student added successfully.';
-                    // Clear form inputs
-                    this.reset();
-                    // Append new row to the table
-                    const tableBody = document.querySelector('tbody');
-                    const newRow = document.createElement('tr');
-                    newRow.innerHTML = `<td>${formData.get('firstName')}</td><td>${formData.get('familyName')}</td><td>${formData.get('dob')}</td>`;
-                    tableBody.appendChild(newRow);
-                } else {
-                    // Show error notification
-                    document.getElementById('notification').textContent = data.error;
-                }
-            } else {
-                // Show error notification
-                document.getElementById('notification').textContent = 'Failed to add new student.';
-            }
-        });
+    event.preventDefault();
+    const formData = new FormData(this);
+    const response = await fetch(this.action, {
+        method: this.method,
+        body: formData
+    });
+    const data = await response.json(); // Parse JSON body regardless of the response status code
+    if (response.ok) {
+        // Show success notification
+        document.getElementById('notification').textContent = 'New student added successfully.';
+        // Clear form inputs
+        this.reset();
+        // Append new row to the table
+        const tableBody = document.querySelector('tbody');
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `<td>${formData.get('firstName')}</td><td>${formData.get('familyName')}</td><td>${formData.get('dob')}</td>`;
+        tableBody.appendChild(newRow);
+    } else {
+        // Show error notification with the specific error message from the server
+        document.getElementById('notification').textContent = data.error;
+    }
+});
     </script>
 </body>
 </html>

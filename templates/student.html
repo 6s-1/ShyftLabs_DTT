@@ -17,7 +17,7 @@
     font-size: 2rem;
     display: grid;
     grid-template-columns :20% 80%;
-    grid-template-rows: .5fr 1fr 1fr;
+    grid-template-rows: .5fr 0.5fr 0.5fr 0.5fr;
     
 }
     table, th, td {
@@ -46,6 +46,15 @@ h1{
 
 }
 .main-content2{
+    grid-row: 3/4;
+    text-align: center;
+}
+nav>h4{
+    text-align: center;
+}
+
+.main-content3{
+    grid-column: 2/3;
     text-align: center;
 }
 
@@ -104,7 +113,7 @@ h1{
         
     </div>
     <!-- Notification area -->
-    <div id="notification"></div>
+    <div id="notification", class = "main-content3"></div>
     <!-- JavaScript to handle form submission and display notifications -->
     <script>
         document.querySelector('form').addEventListener('submit', async function(event) {

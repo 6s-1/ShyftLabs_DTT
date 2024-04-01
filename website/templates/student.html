@@ -41,11 +41,11 @@
         background-color: #6cd0e6;
     }
     img.logo {
-       width: 100%;        /* This will make the image responsive to the container size */
-       max-width: 200px;   /* You can adjust this to fit your actual logo size */
-       height: auto;       /* This will maintain the aspect ratio of the image */
-       margin: 0 auto;     /* This centers the image in its container */
-       grid-row: 1 / 2;    /* Places the image in the first row of the grid */
+       width: 100%;        
+       max-width: 200px;   
+       height: auto;       
+       margin: 0 auto;     
+       grid-row: 1 / 2;    
        grid-column: 1 / 2; 
    }
 h1{
@@ -106,7 +106,6 @@ nav>h4{
             <button type="submit">Submit</button>
         </form>
     </div>
-    <!-- Tabular list of students -->
     <div class="main-content2">
         <h2>List of Students</h2>
         <table style="margin-left: auto; margin-right: auto;">
@@ -118,12 +117,10 @@ nav>h4{
                 </tr>
             </thead>
             <tbody>
-                {% for student in students %} <!-- Make sure this variable matches what's passed from Flask -->
+                {% for student in students %}
                 <tr>
-                    <!-- Use the correct model attribute names here -->
                     <td>{{ student.firstName }}</td>
                     <td>{{ student.familyName }}</td>
-                    <!-- Format the date properly for display -->
                     <td>{{ student.dob.strftime('%Y-%m-%d') }}</td>
                 </tr>
                 {% endfor %}
@@ -131,9 +128,7 @@ nav>h4{
         </table>
     </div>
     
-    <!-- Notification area -->
     <div id="notification", class = "main-content3"></div>
-    <!-- JavaScript to handle form submission and display notifications -->
     <script>
         document.querySelector('form').addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -142,19 +137,15 @@ nav>h4{
         method: this.method,
         body: formData
     });
-    const data = await response.json(); // Parse JSON body regardless of the response status code
+    const data = await response.json(); 
     if (response.ok) {
-        // Show success notification
         document.getElementById('notification').textContent = 'New student added successfully.';
-        // Clear form inputs
         this.reset();
-        // Append new row to the table
         const tableBody = document.querySelector('tbody');
         const newRow = document.createElement('tr');
         newRow.innerHTML = `<td>${formData.get('firstName')}</td><td>${formData.get('familyName')}</td><td>${formData.get('dob')}</td>`;
         tableBody.appendChild(newRow);
     } else {
-        // Show error notification with the specific error message from the server
         document.getElementById('notification').textContent = data.error;
     }
 });

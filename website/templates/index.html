@@ -23,8 +23,7 @@
     grid-template-columns: 30% 70%;
     grid-template-rows: 0.25fr 1.25fr 1fr;
     background-image: url("{{ url_for('static', filename='Blue_bggg.jpg') }}");
-    /* background-size: cover; Cover the entire page */
-    background-position: center; /* Center the background image */
+    background-position: center; 
     font-family: 'Josefin Sans';
 
 }
@@ -44,12 +43,12 @@ nav > h4{
     text-align: center;
 }
 img.logo {
-       width: 100%;        /* This will make the image responsive to the container size */
-       max-width: 200px;   /* You can adjust this to fit your actual logo size */
-       height: auto;       /* This will maintain the aspect ratio of the image */
-       margin: 0 auto;     /* This centers the image in its container */
-       grid-row: 1 / 2;    /* Places the image in the first row of the grid */
-       grid-column: 1 / 2; /* Places the image in the second column of the grid */
+       width: 100%;        
+       max-width: 200px;   
+       height: auto;       
+       margin: 0 auto;     
+       grid-row: 1 / 2;  
+       grid-column: 1 / 2; 
    }
 h1{
     grid-column: 2/3;
@@ -77,7 +76,6 @@ h1{
     <nav class="navbar">
         <h4>Navigation Bar</h4>
         <ul class="nav-links">
-            <!--<li><a href="/">Home</a></li> -->
             <li><a href="/student">Student</a></li>
             <li><a href="/courses">Courses</a></li>
         </ul>

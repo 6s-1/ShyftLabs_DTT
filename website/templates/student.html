@@ -10,72 +10,69 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-
-</head>
-<style>
-    body {
-    padding: 2rem;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    min-height: 100vh;
-    font-size: 2rem;
-    display: grid;
-    grid-template-columns :30% 70%;
-    grid-template-rows: .5fr 0.5fr 0.5fr 0.5fr;
-    font-family: 'Josefin Sans';
-    background-image: url("{{ url_for('static', filename='Blue_bg1.jpg') }}");
-    background-position: center;
+    <style>
+        body {
+        padding: 2rem;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        min-height: 100vh;
+        font-size: 2rem;
+        display: grid;
+        grid-template-columns :30% 70%;
+        grid-template-rows: .5fr 0.5fr 0.5fr 0.5fr;
+        font-family: 'Josefin Sans';
+        background-image: url("{{ url_for('static', filename='Blue_bg1.jpg') }}");
+        background-position: center;
+        
+    }
+        table, th, td {
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+        }
+        nav{
+            grid-row: 2/ -1;
+            grid-column: 1/2;
+            border: 5px solid black;
+            background-color: #6cd0e6;
+        }
+        img.logo {
+           width: 100%;        
+           max-width: 200px;   
+           height: auto;       
+           margin: 0 auto;     
+           grid-row: 1 / 2;    
+           grid-column: 1 / 2; 
+       }
+    h1{
+        grid-row: 1/2;
+        grid-column: 2/3;
+        text-align: center;
+    }
+    .main-content1{
+        grid-row: 2/3;
+        grid-column: 2/3;
+        text-align: center;
     
-}
-    table, th, td {
-        border: 1px solid #000000;
-        border-collapse: collapse;
     }
-    th, td {
-        padding: 8px;
+    
+    .main-content2{
+        grid-row: 3/4;
+        text-align: center;
     }
-    nav{
-        grid-row: 2/ -1;
-        grid-column: 1/2;
-        border: 5px solid black;
-        background-color: #6cd0e6;
+    nav>h4{
+        text-align: center;
     }
-    img.logo {
-       width: 100%;        
-       max-width: 200px;   
-       height: auto;       
-       margin: 0 auto;     
-       grid-row: 1 / 2;    
-       grid-column: 1 / 2; 
-   }
-h1{
-    grid-row: 1/2;
-    grid-column: 2/3;
-    text-align: center;
-}
-.main-content1{
-    grid-row: 2/3;
-    grid-column: 2/3;
-    text-align: center;
+    
+    .main-content3{
+        grid-column: 2/3;
+        text-align: center;
+    }
+        </style>
+</head>
 
-}
-
-.main-content2{
-    grid-row: 3/4;
-    text-align: center;
-}
-nav>h4{
-    text-align: center;
-}
-
-.main-content3{
-    grid-column: 2/3;
-    text-align: center;
-}
-
-
-
-    </style>
     
 
 <body>

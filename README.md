@@ -52,7 +52,7 @@ python main.py
 ```
 The application will be running on http://127.0.0.1:5000 .
 
-## Re-initialising the database. 
+## Re-initialising the database 
 If the user wants to re-initialise the database/start with a fresh database:
 1. The user should navigate to the instance folder and delete the database.db file.
 2. The user should then run the following command which will re-initialise the database and run the application again:

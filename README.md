@@ -63,4 +63,6 @@ python main.py
 ## Manually checking the database
 The application displays the list of students and courses and the database has been already been initialised with one student and one course.
 
-However, if the user wants to check the content of the database, then the user can navigate to the instance folder and locate the database.db file. Next, open the webiste https://inloop.github.io/sqlite-viewer/ and drag and drop or manually locate the file database.db on your file system and upload it to the website link given to view the contents of the database. 
+However, if the user wants to check the content of the database:
+1. The user should navigate to the instance folder and locate the database.db file.
+2. Next, open the webiste https://inloop.github.io/sqlite-viewer/ and drag and drop or manually locate the file database.db on your file system and upload it to the website link given to view the contents of the database. 

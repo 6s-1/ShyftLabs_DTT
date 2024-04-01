@@ -50,6 +50,7 @@ For both Windows and macOS:
 ```sh
 python main.py
 ```
+The application will be running on http://127.0.0.1:5000 .
 
 ## Manually checking the database
 The application displays the list of students and courses and the database has been already been initialised with one student and one course.

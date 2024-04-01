@@ -7,6 +7,7 @@ Made by-Shreya Saxena for ShyftLabs. This is the GitHub repository for my Devlop
 3. Backend-SQL for data storage, with SQLAlchemy as the ORM to interact with the database.
 4. Wallpaper/images- Adobe Firefly(Generative Ai).
 
+## The following steps are to be followed ti run the app:
 ## 1. Cloning the Repository
 
 Navigate to your desired directory and clone the ShyftLabs_DTT repository.

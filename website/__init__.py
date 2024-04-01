@@ -1,7 +1,6 @@
 from os import path
 from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from waitress import serve
 import datetime
 
 db = SQLAlchemy()

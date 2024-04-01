@@ -1,13 +1,13 @@
-* {
+* 
+/* Tester CSS */
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     padding: 2rem;
     background-color: #333;
-    color: rgb(255, 177, 177);
     min-height: 100vh;
     display: flex;
     flex-direction: row;
@@ -17,26 +17,24 @@ body {
     font-size: 2rem;
 }
 
-
-
 :root {
-    --input-border-color: #000000; /* Change to the color you want for your table borders */
-    --button-color: #555; /* Button background color */
-    --text-color: #ffffff; /* Text color */
+    --input-border-color: #000000; 
+    --button-color: #555; 
+    --text-color: #ffffff; 
 }
 
 /* Table Styles */
 table {
-    width: 100%; /* Full width of its container */
-    border-collapse: collapse; /* Eliminate space between borders */
-    margin-top: 1rem; /* Space above the table */
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 1rem; 
 }
 
 /* Table Header and Cell Styles */
 th, td {
-    border: 1px solid #000000; /* black border for cells */
-    text-align: left; /* Align text to the left in each cell */
-    padding: 8px; /* Padding inside each cell for space around the text */
+    border: 1px solid #000000; 
+    text-align: left;
+    padding: 8px; 
 }
 
 input, button {

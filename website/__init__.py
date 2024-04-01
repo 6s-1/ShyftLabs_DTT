@@ -42,7 +42,6 @@ def create_app():
             except ValueError:
                 return jsonify({'error': 'Invalid date format for Date of Birth.'}), 400
 
-            # Create and add student to the database
             new_student = Student(firstName=first_name, familyName=family_name, dob=dob_date)
             db.session.add(new_student)
             db.session.commit()
@@ -59,7 +58,7 @@ def create_app():
             if not course_name:
                 return jsonify({'error': 'All fields are required.'}), 400
 
-            # Create and add course to the database
+            # Create and adding course to the database
             new_course = Courses(courseName=course_name)
             db.session.add(new_course)
             db.session.commit()
@@ -76,10 +75,3 @@ def create_database(app):
                 db.create_all()
             print("Created Database!")
 
-# Uncomment the appropriate line below to serve your app with waitress or run directly with Flask
-
-# if __name__ == "__main__":
-#     serve(create_app(), host="0.0.0.0", port=8000)
-
-# if __name__ == "__main__":
-#     create_app().run(debug=True, host="0.0.0.0", port=8000)

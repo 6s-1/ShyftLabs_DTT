@@ -34,9 +34,9 @@ Install dependencies on mac:
 
 ```sh
 pip install requests python-dotenv Flask
-Upgrade pip (optional but recommended):
 ```
 
+Upgrade pip (optional but recommended):
 ```sh
 pip install --upgrade pip
 ```

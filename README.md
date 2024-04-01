@@ -1,4 +1,4 @@
-# ShyftLabs.io
+# ShyftLabs.io-Student Result Management System
 Student Result Management System made by-Shreya Saxena for ShyftLabs. This is the GitHub repository for the Devlopment Technical Test.
 
 ### Tech stack used: 

@@ -50,3 +50,8 @@ For both Windows and macOS:
 ```sh
 python main.py
 ```
+
+## Manually checking the database
+The application displays the list of students and courses and the database has been already been initialised with one student and one course.
+
+However, if one wants to check the content of the database, then one can navigate to the instance folder and locate the database.db file. Next, open the webiste https://inloop.github.io/sqlite-viewer/ and drag and drop or manually locate the file database.db on your file system and upload it to the website link given to view the contents of the database. 

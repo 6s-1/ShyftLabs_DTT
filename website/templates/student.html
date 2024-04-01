@@ -23,9 +23,8 @@
     grid-template-columns :30% 70%;
     grid-template-rows: .5fr 0.5fr 0.5fr 0.5fr;
     font-family: 'Josefin Sans';
-    background-image: url("{{ url_for('static', filename='Blue_bggg.jpg') }}");
-
-
+    background-image: url("{{ url_for('static', filename='Blue_bg1.jpg') }}");
+    background-position: center;
     
 }
     table, th, td {
@@ -119,17 +118,19 @@ nav>h4{
                 </tr>
             </thead>
             <tbody>
-                {% for student in student %}
+                {% for student in students %} <!-- Make sure this variable matches what's passed from Flask -->
                 <tr>
-                    <td>{{ student['first_name'] }}</td>
-                    <td>{{ student['family_name'] }}</td>
-                    <td>{{ student['dob'] }}</td>
+                    <!-- Use the correct model attribute names here -->
+                    <td>{{ student.firstName }}</td>
+                    <td>{{ student.familyName }}</td>
+                    <!-- Format the date properly for display -->
+                    <td>{{ student.dob.strftime('%Y-%m-%d') }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-        
     </div>
+    
     <!-- Notification area -->
     <div id="notification", class = "main-content3"></div>
     <!-- JavaScript to handle form submission and display notifications -->

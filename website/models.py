@@ -3,11 +3,13 @@ from flask_login import UserMixin
 from sqlalchemy.sql import func
 
 class Student(db.Model, UserMixin):
-    firstName = db.Column(db.String, primary_key=True)
-    familyName = db.Column(db.String(150))
+    id = db.Column(db.Integer, primary_key=True)
+    firstName = db.Column(db.String(150), nullable=False)
+    familyName = db.Column(db.String(150), nullable=False)
     dob = db.Column(db.DateTime(timezone=True), default=func.now())
 
 class Courses(db.Model):
-    courseName = db.Column(db.String, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
+    courseName = db.Column(db.String(150), nullable=False)
 
 

@@ -39,9 +39,9 @@ Upgrade pip (optional but recommended):
 
 ```sh
 pip install --upgrade pip
-Install Flask and extensions:
 ```
 
+Install Flask and extensions:
 ```sh
 pip install flask flask-sqlalchemy flask-login
 ```

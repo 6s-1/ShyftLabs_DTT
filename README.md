@@ -1,5 +1,10 @@
 # ShyftLabs.io
 Made by-Shreya Saxena for ShyftLabs. This is the GitHub repository for my Devlopment Technical Test.
+Tech stack used: 
+Frontend-HTML/CSS for structure and styling.
+Server-Python with Flask for handling HTTP requests and server logic, Flask extensions for additional functionalities, and Jinja for template rendering.
+Backend-SQL for data storage, with SQLAlchemy as the ORM to interact with the database.
+Wallpaper/images- Adobe Firefly(Generative Ai).
 
 ## 1. Cloning the Repository
 

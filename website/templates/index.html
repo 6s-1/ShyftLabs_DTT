@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShyftLabs - Development Technical Test</title>
     <link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
 </head>
 <style>
     body {
@@ -16,16 +20,22 @@
     gap: 2rem;
     font-size: 2rem;
     display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 0.75fr 1fr 1fr;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 0.25fr 1.25fr 1fr;
+    background-image: url("{{ url_for('static', filename='Blue_bggg.jpg') }}");
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    font-family: 'Josefin Sans';
+
 }
     h2{
         text-align: center;
     }
 
  nav{
+    background-color: #6cd0e6;
     grid-column: 1/2;
-    grid-row: 1/-1;
+    grid-row: 2/-1;
     border : 5px solid black;
     
     
@@ -33,7 +43,16 @@
 nav > h4{
     text-align: center;
 }
+img.logo {
+       width: 100%;        /* This will make the image responsive to the container size */
+       max-width: 200px;   /* You can adjust this to fit your actual logo size */
+       height: auto;       /* This will maintain the aspect ratio of the image */
+       margin: 0 auto;     /* This centers the image in its container */
+       grid-row: 1 / 2;    /* Places the image in the first row of the grid */
+       grid-column: 1 / 2; /* Places the image in the second column of the grid */
+   }
 h1{
+    grid-column: 2/3;
     grid-row: 1/2;
     text-align: center;
     
@@ -47,7 +66,10 @@ h1{
 }
 </style>
 <body>
+    
     <h1>ShyftLabs - Development Technical Test</h1>
+    <img src="{{ url_for('static', filename='ShyftLabs_logo.png') }}" alt="ShyftLabs logo">
+
     <div class="main-content">
         <h2>Welcome to the Home Page</h2>
         <p>This is the home page of ShyftLabs Development Technical Test. You can navigate to the other pages using the link in the navigation bar on the left side.</p>

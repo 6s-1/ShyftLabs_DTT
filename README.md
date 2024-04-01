@@ -16,7 +16,6 @@ cd ShyftLabs_DTT
 
 For Windows:
 ```sh
-cmd
 py -m venv .venv
 .venv\Scripts\activate
 ```

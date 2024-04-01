@@ -1,4 +1,6 @@
 # ShyftLabs_DTT
+Made by-Shreya Saxena for ShyftLabs.
+This is the GitHub repository for my Devlopment Technical Test.
 
 ## 1. Cloning the Repository
 
